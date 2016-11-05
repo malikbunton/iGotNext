@@ -13,6 +13,11 @@
 		0DD7DBC01DCE624D0030FD31 /* GotNext.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBBE1DCE624D0030FD31 /* GotNext.xcdatamodeld */; };
 		0DD7DBC21DCE624D0030FD31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD7DBC11DCE624D0030FD31 /* Assets.xcassets */; };
 		0DD7DBC51DCE624D0030FD31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD7DBC31DCE624D0030FD31 /* LaunchScreen.storyboard */; };
+		0DD7DBCD1DCE62760030FD31 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBCC1DCE62760030FD31 /* Player.swift */; };
+		0DD7DBCF1DCE667B0030FD31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBCE1DCE667B0030FD31 /* LoginViewController.swift */; };
+		0DD7DBD11DCE66DA0030FD31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBD01DCE66DA0030FD31 /* HomeViewController.swift */; };
+		0DD7DBD31DCE67510030FD31 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBD21DCE67510030FD31 /* SearchViewController.swift */; };
+		0DD7DBD51DCE68A10030FD31 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBD41DCE68A10030FD31 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		0DD7DBC11DCE624D0030FD31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DD7DBC41DCE624D0030FD31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DD7DBC61DCE624D0030FD31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DD7DBCC1DCE62760030FD31 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		0DD7DBCE1DCE667B0030FD31 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0DD7DBD01DCE66DA0030FD31 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0DD7DBD21DCE67510030FD31 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0DD7DBD41DCE68A10030FD31 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +68,12 @@
 			children = (
 				0DD7DBB71DCE624D0030FD31 /* AppDelegate.swift */,
 				0DD7DBB91DCE624D0030FD31 /* ViewController.swift */,
+				0DD7DBCC1DCE62760030FD31 /* Player.swift */,
+				0DD7DBD41DCE68A10030FD31 /* Game.swift */,
 				0DD7DBBB1DCE624D0030FD31 /* Main.storyboard */,
+				0DD7DBCE1DCE667B0030FD31 /* LoginViewController.swift */,
+				0DD7DBD01DCE66DA0030FD31 /* HomeViewController.swift */,
+				0DD7DBD21DCE67510030FD31 /* SearchViewController.swift */,
 				0DD7DBC11DCE624D0030FD31 /* Assets.xcassets */,
 				0DD7DBC31DCE624D0030FD31 /* LaunchScreen.storyboard */,
 				0DD7DBC61DCE624D0030FD31 /* Info.plist */,
@@ -139,9 +154,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD7DBCD1DCE62760030FD31 /* Player.swift in Sources */,
+				0DD7DBD31DCE67510030FD31 /* SearchViewController.swift in Sources */,
 				0DD7DBBA1DCE624D0030FD31 /* ViewController.swift in Sources */,
 				0DD7DBC01DCE624D0030FD31 /* GotNext.xcdatamodeld in Sources */,
+				0DD7DBCF1DCE667B0030FD31 /* LoginViewController.swift in Sources */,
 				0DD7DBB81DCE624D0030FD31 /* AppDelegate.swift in Sources */,
+				0DD7DBD11DCE66DA0030FD31 /* HomeViewController.swift in Sources */,
+				0DD7DBD51DCE68A10030FD31 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
