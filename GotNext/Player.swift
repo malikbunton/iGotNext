@@ -9,6 +9,19 @@
 import Foundation
 
 class Player {
+    let name: String!
+    let age: String!
+    let height: String!
+    let experience: Int!
+    
+    let location: String!
+    let isReady: Bool?
+    let hasBall: Bool?
+    
+    var sportsmanshipRates: NSArray! = []
+    let sportsmanshipRating: Int!
+    var skillRates: NSArray! = []
+    let skillRating: Int!
     
     
     
