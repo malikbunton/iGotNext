@@ -36,4 +36,13 @@ class Player {
             return 6
         }
     }
+    
+    func joinGame() {
+        //Database function join
+    }
+    
+    func leaveGame(){
+        //Database leave the game
+    }
+    
   }

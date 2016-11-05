@@ -9,5 +9,10 @@
 import Foundation
 
 class Game: AnyObject {
+    var location: String!
+    var isOpen: Bool?
+    var players: [Player] = []
+    var closeTime: Int!
+    var openTime: Int!
     
 }
