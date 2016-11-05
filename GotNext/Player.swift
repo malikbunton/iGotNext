@@ -9,7 +9,6 @@
 import Foundation
 
 class Player {
-    var <#name#> = <#value#>
     
     
     
