@@ -9,20 +9,32 @@
 import Foundation
 
 class Player {
-    let name: String!
-    let age: String!
-    let height: String!
-    let experience: Int!
+    var name: String!
+    var age: String!
+    var height: String!
+    var experience: Int!
     
-    let location: String!
-    let isReady: Bool?
-    let hasBall: Bool?
+    var location: String!
+    var isReady: Bool?
+    var hasBall: Bool?
     
-    var sportsmanshipRates: NSArray! = []
-    let sportsmanshipRating: Int!
-    var skillRates: NSArray! = []
-    let skillRating: Int!
+    var sportsmanshipRates: [Int]! = []
+    var sportsmanshipRating: Int!
+    var skillRates: [Int]! = []
+    var skillRating: Int!
     
-    
+    func getSportsmanshipRating() -> Int {
+        if self.sportsmanshipRates.count > 0 {
+            var sum = 0
+            
+            for rate in self.sportsmanshipRates {
+                sum = sum + rate
+            }
+            
+            return (sum / self.sportsmanshipRates.count)
+        } else {
+            return 6
+        }
+    }
     
 }
