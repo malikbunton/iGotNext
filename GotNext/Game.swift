@@ -19,12 +19,13 @@ class Game: AnyObject {
     var schedule: String!
     var phoneNumber: Int!
     var picture: UIImage!
+    var name:String!
 
     init() {
     }
     
     init(location: CLLocationCoordinate2D!, isOpen: Bool!, players: NSArray!, close: String!,
-         open: String!) {
+         open: String!, name: String!) {
         self.location = location
         self.isOpen = isOpen
         self.players = players

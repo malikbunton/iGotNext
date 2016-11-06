@@ -38,7 +38,14 @@ class ChooseGameView: UIViewController, UITableViewDelegate{
 // Table Functions
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        //Setup cells based on the array of players at t
+        if game.players.count > 0 {
+            let player:Player = game.players.object(at: indexPath.row) as! Player
+            cell.textLabel?.text = player.name
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func joinGame(_ sender: AnyObject) {

@@ -10,8 +10,8 @@ import CoreLocation
 import MapKit
 import UIKit
 
-class GamAnnotation : NSObject, MKAnnotation {
-    private var coord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+class GameAnnotation : NSObject, MKAnnotation {
+    var coord: CLLocationCoordinate2D!
     var game: Game!
     var coordinate: CLLocationCoordinate2D {
         get {
@@ -111,58 +111,44 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         generateParks()
         //let hubbleSpaceCenter:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
-        let locations = [
+        /*let locations = [
             ["title": "Atlanta Hawks Stadium",    "latitude": 33.756885, "longitude": -84.39211],
             ["title": "Archer Hall", "latitude": 33.7462, "longitude": -84.4138],
             ["title": "Kipps Academy", "latitude": 33.7673, "longitude": -84.4232]
-        ]
+        ] */
         
-        for location in locations {
-            let annotation = GamAnnotation()
-            annotation.coordinate
+        for gamePin in gameSet {
+            let annotation = GameAnnotation()
+            annotation.game = gamePin
+            annotation.title = gamePin.name
+            annotation.coord = CLLocationCoordinate2D(latitude: gamePin.location.latitude, longitude: gamePin.location.longitude)
+            mapView.addAnnotation(annotation)
+            //annotation.coordinate =
             /*
             let annotation = MKPointAnnotation()
             annotation.title = location["title"] as? String
             annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
             mapView.addAnnotation(annotation)  */
         }
-        /*
-        for items in matchingItems {
-            selectedPin = items.placemark
-            var mapAnnotation = MKPointAnnotation()
-            var placeMark = MKPlacemark(coordinate: hubbleSpaceCenter)
-            mapAnnotation.coordinate = items.placemark.coordinate
-            mapAnnotation.title = items.placemark.name
-            mapView.addAnnotation(mapAnnotation)
-        }
-    
-        
-        var mapAnnotation = MKPointAnnotation()
-        var placeMark = MKPlacemark(coordinate: hubbleSpaceCenter)
-        mapAnnotation.coordinate = placeMark.coordinate
-        mapAnnotation.title = placeMark.name
-        
-        mapView.addAnnotation(mapAnnotation)
- */
-        // cache the pin
-        //selectedPin = placemark
-        // clear existing pins
-        /*
-        mapView.removeAnnotations(mapView.annotations)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = placemark.coordinate
-        annotation.title = placemark.name
-        if let city = placemark.locality,
-            let state = placemark.administrativeArea {
-            annotation.subtitle = "(city) (state)"
-        }
-        mapView.addAnnotation(annotation)
-        //let span = MKCoordinateSpanMake(0.05, 0.05)
-        //let region = MKCoordinateRegionMake(placemark.coordinate, span)
-        //mapView.setRegion(region, animated: true)
-        
-        */
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let pin = annotation as? GameAnnotation {
+            if let selectedGame = pin.game {
+                var chooseGameView = ChooseGameView()
+                chooseGameView.game = selectedGame
+                chooseGameView.addressLabel.text = selectedGame.name
+                chooseGameView.openTimeLabel.text = selectedGame.openTime
+                chooseGameView.closeTimeLabel.text = selectedGame.closeTime
+                chooseGameView.numPlayersLabel.text = String(selectedGame.players.count)
+                self.present(chooseGameView, animated: true, completion: nil)
+            }
+        }
+        
+        return MKAnnotationView()
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -182,25 +168,4 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
 
 }
-
-extension HomeViewController: HandleMapSearch {
-    func dropPinZoomIn(placemark:MKPlacemark){
-        // cache the pin
-        selectedPin = placemark
-        // clear existing pins
-        mapView.removeAnnotations(mapView.annotations)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = placemark.coordinate
-        annotation.title = placemark.name
-        if let city = placemark.locality,
-            let state = placemark.administrativeArea {
-            annotation.subtitle = "(city) (state)"
-        }
-        mapView.addAnnotation(annotation)
-        let span = MKCoordinateSpanMake(0.05, 0.05)
-        let region = MKCoordinateRegionMake(placemark.coordinate, span)
-        mapView.setRegion(region, animated: true)
-    }
-}
-
 
