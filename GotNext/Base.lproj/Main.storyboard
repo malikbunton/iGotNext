@@ -171,7 +171,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="o5y-LR-uxu">
                                             <color key="tintColor" red="0.93217147440000003" green="0.40569465780000002" blue="0.1019028909" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="backButtonPressed:" destination="jdc-o2-017" id="oAz-DV-29e"/>
+                                                <action selector="backButtonPressed:" destination="jdc-o2-017" id="RaD-z1-BoZ"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Join" id="phn-O6-pQX">
@@ -285,8 +285,7 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="Ath-1S-DPr" id="jPM-TW-fRu"/>
-                        <outlet property="backButton" destination="o5y-LR-uxu" id="Qyb-Ei-czl"/>
-                        <outlet property="backPressed" destination="Fvq-Cc-Yno" id="dbV-Ei-xbq"/>
+                        <outlet property="backButton" destination="o5y-LR-uxu" id="4S7-b7-ZIL"/>
                         <outlet property="closeTimeLabel" destination="Yye-HJ-ViY" id="rfk-rO-ouO"/>
                         <outlet property="joinButton" destination="phn-O6-pQX" id="IDd-B6-AlF"/>
                         <outlet property="navBar" destination="AGl-zL-d0p" id="F0K-ed-9PN"/>
