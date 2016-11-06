@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = mapView
+        
     }
     
 
