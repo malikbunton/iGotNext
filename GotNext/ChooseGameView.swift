@@ -43,6 +43,9 @@ class ChooseGameView: UIViewController, UITableViewDelegate{
     
     @IBAction func joinGame(_ sender: AnyObject) {
         
+        sharedPlayer.joinGame(game: self.game)
+        //slide to in gameview controller
+        
     }
 
     @IBAction func backButtonPressed(_ sender: AnyObject) {

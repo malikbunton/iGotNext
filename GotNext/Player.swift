@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 let sharedPlayer = Player()
 
@@ -18,12 +19,13 @@ class Player {
     var age: Int!
     var height: String!
     var experience: Int!
+    var picture: UIImage?
+    var currentGame: Game?
     
     var location: String!
     var isReady: Bool?
     var hasBall: Bool?
     var isPlaying: Bool?
-    var currentGame: Game?
     
     var sportsmanshipRates: [Int]! = []
     var sportsmanshipRating: Int!
@@ -44,7 +46,20 @@ class Player {
         }
     }
     
-    func joinGame() {
+    init() {
+        
+    }
+    
+    init(username: String!, password: String!, name: String!, age: Int!, height: String!, experience: Int!) {
+        self.username = username
+        self.password = password
+        self.name = name
+        self.age = age
+        self.height = height
+        self.experience = experience
+    }
+    
+    func joinGame(game: Game) {
         //Database function join
     }
     

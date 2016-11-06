@@ -7,12 +7,29 @@
 //
 
 import Foundation
+import UIKit
+import MapKit
 
 class Game: AnyObject {
-    var location: String!
+    var location: CLLocationCoordinate2D!
     var isOpen: Bool?
-    var players: [Player] = []
-    var closeTime: Int!
-    var openTime: Int!
+    var players: NSArray!
+    var closeTime: String!
+    var openTime: String!
+    var schedule: String!
+    var phoneNumber: Int!
+    var picture: UIImage!
+
+    init() {
+    }
+    
+    init(location: CLLocationCoordinate2D!, isOpen: Bool!, players: NSArray!, close: String!,
+         open: String!) {
+        self.location = location
+        self.isOpen = isOpen
+        self.players = players
+        self.closeTime = close
+        self.openTime = open
+    }
     
 }
