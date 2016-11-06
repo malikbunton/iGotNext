@@ -17,6 +17,8 @@ class Player {
     var location: String!
     var isReady: Bool?
     var hasBall: Bool?
+    var isPlaying: Bool?
+    var currentGame: Game?
     
     var sportsmanshipRates: [Int]! = []
     var sportsmanshipRating: Int!
