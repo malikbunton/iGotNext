@@ -25,7 +25,12 @@ class LoginViewController: UIViewController {
             //Set sharedplayer to values asscoiated with the user from database
             print(username)
             print(password)
+            sharedPlayer.age = 18
+            sharedPlayer.experience = 16
+            sharedPlayer.name = "demoUser1"
+            
             self.performSegue(withIdentifier: segueLoginToHome, sender: self)
+            
         }
     }
     
