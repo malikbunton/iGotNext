@@ -159,7 +159,7 @@
 				TargetAttributes = {
 					0DD7DBB31DCE624D0030FD31 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2BZ75GT22X;
+						DevelopmentTeam = 94PQJ2LBQ7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -383,7 +383,7 @@
 			baseConfigurationReference = CF41C685E5CE823DDD446E92 /* Pods-GotNext.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2BZ75GT22X;
+				DEVELOPMENT_TEAM = 94PQJ2LBQ7;
 				INFOPLIST_FILE = GotNext/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.malikbunton.GotNext;
@@ -397,7 +397,7 @@
 			baseConfigurationReference = 2C7BC8102136750F0472BAF8 /* Pods-GotNext.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2BZ75GT22X;
+				DEVELOPMENT_TEAM = 94PQJ2LBQ7;
 				INFOPLIST_FILE = GotNext/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.malikbunton.GotNext;

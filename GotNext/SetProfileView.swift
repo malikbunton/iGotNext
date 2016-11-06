@@ -34,6 +34,19 @@ class SetProfileView: UIViewController, UITextFieldDelegate {
         self.performSegue(withIdentifier: segueSetUpToHome, sender: self)
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField:UITextField)-> Bool{
+        playerNameField.resignFirstResponder()
+        genderField.resignFirstResponder()
+        ageField.resignFirstResponder()
+        heightField.resignFirstResponder()
+        yearsField.resignFirstResponder()
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
