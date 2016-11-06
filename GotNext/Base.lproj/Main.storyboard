@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -131,24 +130,12 @@
                     <view key="view" contentMode="scaleToFill" id="jPJ-WP-XTL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3e1-YF-0Jr">
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="3e1-YF-0Jr" secondAttribute="height" multiplier="1:1" id="Jg9-ut-YxY"/>
-                                </constraints>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3e1-YF-0Jr" secondAttribute="trailing" id="72S-wH-wuy"/>
-                            <constraint firstItem="3e1-YF-0Jr" firstAttribute="top" secondItem="riU-12-I4E" secondAttribute="bottom" id="Zvy-mW-44N"/>
-                            <constraint firstItem="3e1-YF-0Jr" firstAttribute="leading" secondItem="jPJ-WP-XTL" secondAttribute="leading" id="gGB-Z5-YLB"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJJ-zZ-evz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="1159"/>
+            <point key="canvasLocation" x="2878" y="697"/>
         </scene>
         <!--Sign Up View-->
         <scene sceneID="aTU-Ze-q6W">
@@ -234,7 +221,7 @@
         <!--Set Up Profile-->
         <scene sceneID="Z6h-pO-o8Z">
             <objects>
-                <viewController title="Set Up Profile" id="EcK-Vo-aMN" sceneMemberID="viewController">
+                <viewController title="Set Up Profile" id="EcK-Vo-aMN" customClass="SetProfileView" customModule="GotNext" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n0v-Lu-t9S"/>
                         <viewControllerLayoutGuide type="bottom" id="6j1-TL-cv9"/>
@@ -277,7 +264,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Years Played" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILD-d1-N4y">
                                 <constraints>
@@ -304,6 +291,9 @@
                                 <state key="normal" title="Update Profile">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="userUpdate:" destination="EcK-Vo-aMN" eventType="touchUpInside" id="3Qm-pY-JAb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93217147440000003" green="0.40569465780000002" blue="0.1019028909" alpha="1" colorSpace="calibratedRGB"/>
@@ -324,10 +314,20 @@
                             <constraint firstItem="rHa-V2-Ohl" firstAttribute="centerX" secondItem="Ekx-Ya-nLd" secondAttribute="centerX" constant="-80" id="xdR-yd-LtS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageField" destination="rHa-V2-Ohl" id="MZR-Ng-x2J"/>
+                        <outlet property="genderField" destination="TCX-n5-y8b" id="pY8-3J-xtI"/>
+                        <outlet property="heightField" destination="1Dx-5w-UK9" id="1yV-up-eV9"/>
+                        <outlet property="imageView" destination="8YZ-zb-8yo" id="FUH-pr-Uvj"/>
+                        <outlet property="playerNameField" destination="j3v-d5-JkT" id="qyu-kf-yXx"/>
+                        <outlet property="updateButton" destination="2GB-zm-tcC" id="ENG-jc-4cd"/>
+                        <outlet property="yearsField" destination="ILD-d1-N4y" id="QIE-Rl-hg0"/>
+                        <segue destination="7xb-HD-W6T" kind="showDetail" identifier="fromSignUpToHome" id="xY5-2w-xNw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WT3-MM-W7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917.5999999999999" y="687.7061469265368"/>
+            <point key="canvasLocation" x="1986" y="697"/>
         </scene>
     </scenes>
 </document>

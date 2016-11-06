@@ -20,7 +20,15 @@ class SignUpView: UIViewController, UITextFieldDelegate{
         // Do any additional setup after loading the view.
     }
     @IBAction func signUp(_ sender: AnyObject) {
-        
+        if let username  = usernameField.text,
+            (self.confirmPasswordField.text == self.passwordField.text) {
+            sharedPlayer.username = username
+            sharedPlayer.password = self.passwordField.text
+            self.performSegue(withIdentifier: segueSignUpToSetUp, sender: self)
+        }
+        else {
+            print("passwords done match or username is nil")
+        }
     }
 
     override func didReceiveMemoryWarning() {

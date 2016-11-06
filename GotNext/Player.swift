@@ -8,9 +8,14 @@
 
 import Foundation
 
+let sharedPlayer = Player()
+
 class Player {
+    var username: String!
+    var password: String!
+    
     var name: String!
-    var age: String!
+    var age: Int!
     var height: String!
     var experience: Int!
     

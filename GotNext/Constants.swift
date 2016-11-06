@@ -9,3 +9,4 @@
 import Foundation
 
 let segueSignUpToSetUp: String! = "signuptosetup"
+let segueSetUpToHome: String! = "fromSignUpToHome"
