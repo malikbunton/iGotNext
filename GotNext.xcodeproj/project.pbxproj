@@ -21,6 +21,7 @@
 		0DD7DBD11DCE66DA0030FD31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBD01DCE66DA0030FD31 /* HomeViewController.swift */; };
 		0DD7DBD31DCE67510030FD31 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBD21DCE67510030FD31 /* SearchViewController.swift */; };
 		0DD7DBD51DCE68A10030FD31 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DBD41DCE68A10030FD31 /* Game.swift */; };
+		4316CA5A773D6B77E2455B12 /* Pods_GotNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BEEBED5D4A634C53421598 /* Pods_GotNext.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		0DD7DBD01DCE66DA0030FD31 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0DD7DBD21DCE67510030FD31 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0DD7DBD41DCE68A10030FD31 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2C7BC8102136750F0472BAF8 /* Pods-GotNext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GotNext.release.xcconfig"; path = "Pods/Target Support Files/Pods-GotNext/Pods-GotNext.release.xcconfig"; sourceTree = "<group>"; };
+		C2BEEBED5D4A634C53421598 /* Pods_GotNext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GotNext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF41C685E5CE823DDD446E92 /* Pods-GotNext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GotNext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GotNext/Pods-GotNext.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4316CA5A773D6B77E2455B12 /* Pods_GotNext.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,8 @@
 			children = (
 				0DD7DBB61DCE624D0030FD31 /* GotNext */,
 				0DD7DBB51DCE624D0030FD31 /* Products */,
+				444D08A682EC291852012AAA /* Pods */,
+				7121C4AB38976F609AD243CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +98,23 @@
 			path = GotNext;
 			sourceTree = "<group>";
 		};
+		444D08A682EC291852012AAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF41C685E5CE823DDD446E92 /* Pods-GotNext.debug.xcconfig */,
+				2C7BC8102136750F0472BAF8 /* Pods-GotNext.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7121C4AB38976F609AD243CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2BEEBED5D4A634C53421598 /* Pods_GotNext.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DD7DBC91DCE624D0030FD31 /* Build configuration list for PBXNativeTarget "GotNext" */;
 			buildPhases = (
+				71EF25E75997F5ADDCB40B99 /* [CP] Check Pods Manifest.lock */,
 				0DD7DBB01DCE624D0030FD31 /* Sources */,
 				0DD7DBB11DCE624D0030FD31 /* Frameworks */,
 				0DD7DBB21DCE624D0030FD31 /* Resources */,
+				B4A59508C3DA34A944207B37 /* [CP] Embed Pods Frameworks */,
+				2561B5967A0C26ED1B934DFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,6 +184,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2561B5967A0C26ED1B934DFC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GotNext/Pods-GotNext-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71EF25E75997F5ADDCB40B99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4A59508C3DA34A944207B37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GotNext/Pods-GotNext-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DD7DBB01DCE624D0030FD31 /* Sources */ = {
@@ -292,6 +367,7 @@
 		};
 		0DD7DBCA1DCE624D0030FD31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF41C685E5CE823DDD446E92 /* Pods-GotNext.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GotNext/Info.plist;
@@ -304,6 +380,7 @@
 		};
 		0DD7DBCB1DCE624D0030FD31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C7BC8102136750F0472BAF8 /* Pods-GotNext.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GotNext/Info.plist;
