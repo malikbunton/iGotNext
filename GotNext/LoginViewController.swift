@@ -10,12 +10,25 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var usernameField: UITextField!
+    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func loginPressed(_ sender: AnyObject) {
+        if let username = self.usernameField.text, let password = self.passwordField.text {
+            //Check if username and password match
+            //Set sharedplayer to values asscoiated with the user from database
+            print(username)
+            print(password)
+            self.performSegue(withIdentifier: segueLoginToHome, sender: self)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
