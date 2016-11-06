@@ -383,6 +383,7 @@
 			baseConfigurationReference = CF41C685E5CE823DDD446E92 /* Pods-GotNext.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 2BZ75GT22X;
 				INFOPLIST_FILE = GotNext/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -397,6 +398,7 @@
 			baseConfigurationReference = 2C7BC8102136750F0472BAF8 /* Pods-GotNext.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 2BZ75GT22X;
 				INFOPLIST_FILE = GotNext/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

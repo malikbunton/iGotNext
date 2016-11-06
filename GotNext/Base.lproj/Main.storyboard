@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xVq-tu-hyp">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xVq-tu-hyp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -106,6 +106,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93217147440000003" green="0.40569465780000002" blue="0.1019028909" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Lrf-q9-Imi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Oq-5X-9fO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aHq-Js-4hD" secondAttribute="trailing" constant="-18" id="4Qj-QS-ED2"/>
@@ -116,6 +117,9 @@
                             <constraint firstItem="aHq-Js-4hD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-18" id="kva-09-yLo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aHq-Js-4hD" secondAttribute="bottom" id="xhy-cj-ijc"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="X1E-hK-4HF" appends="YES" id="cva-KG-xlo"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="aHq-Js-4hD" id="UrQ-c0-KbM"/>
@@ -125,6 +129,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="X1E-hK-4HF">
+                    <connections>
+                        <action selector="cancel:" destination="BYZ-38-t0r" id="sfY-p5-wMh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1121" y="1389"/>
         </scene>
@@ -140,7 +149,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqH-Hn-sy7"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqH-Hn-sy7">
+                                <frame key="frameInset" width="1000" height="1000"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -522,6 +533,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xY5-2w-xNw"/>
+        <segue reference="K7v-rd-xgl"/>
     </inferredMetricsTieBreakers>
 </document>

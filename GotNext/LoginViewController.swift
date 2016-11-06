@@ -19,6 +19,11 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func cancel(_ sender: AnyObject) {
+        self.view.endEditing(true)
+        passwordField.resignFirstResponder()
+    }
+    
     @IBAction func loginPressed(_ sender: AnyObject) {
         if let username = self.usernameField.text, let password = self.passwordField.text {
             //Check if username and password match
