@@ -72,6 +72,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.mapView.delegate = self
         // set the region to display, this also sets a correct zoom level
         // set starting center location in San Francisco
         let centerLocation = CLLocation(latitude: 33.7683, longitude: -84.4008)
@@ -136,7 +137,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         */
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

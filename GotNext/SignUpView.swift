@@ -16,7 +16,8 @@ class SignUpView: UIViewController, UITextFieldDelegate{
     @IBOutlet var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.view.endEditing(true)
         // Do any additional setup after loading the view.
     }
     @IBAction func signUp(_ sender: AnyObject) {

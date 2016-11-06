@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetProfileView: UIViewController {
+class SetProfileView: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var playerNameField: UITextField!
@@ -21,9 +21,9 @@ class SetProfileView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.endEditing(true)
         // Do any additional setup after loading the view.
     }
-    
     
     @IBAction func userUpdate(_ sender: AnyObject) {
         sharedPlayer.name = self.playerNameField.text!
@@ -32,7 +32,6 @@ class SetProfileView: UIViewController {
         sharedPlayer.experience = Int(self.ageField.text!)
         
         self.performSegue(withIdentifier: segueSetUpToHome, sender: self)
-        print(sharedPlayer)
     }
 
     override func didReceiveMemoryWarning() {

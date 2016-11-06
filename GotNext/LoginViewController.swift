@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
             sharedPlayer.name = "demoUser1"
             
             self.performSegue(withIdentifier: segueLoginToHome, sender: self)
-            
+            self.view.endEditing(true)
         }
     }
     
