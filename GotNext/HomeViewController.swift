@@ -18,7 +18,7 @@ class GameAnnotation : NSObject, MKAnnotation {
             return coord
         }
     }
-    
+
     func getGame() -> Game? {
         if (self.game != nil) {
             return game
@@ -27,7 +27,7 @@ class GameAnnotation : NSObject, MKAnnotation {
             return nil
         }
     }
-    
+
     var title: String? = ""
     var subtitle: String? = ""
     
@@ -95,14 +95,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         self.mapView.delegate = self
         // set the region to display, this also sets a correct zoom level
         // set starting center location in San Francisco
         let centerLocation = CLLocation(latitude: 33.7683, longitude: -84.4008)
         goToLocation(location: centerLocation)
-        
-        
+
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -132,16 +131,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-        if let pin = view.annotation as? GameAnnotation {
-            if let selectedGame = pin.game {
-                var chooseGameView = ChooseGameView()
-                chooseGameView.game = selectedGame
-                self.present(chooseGameView, animated: true, completion: nil)
-            }
-
-        }
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        self.performSegue(withIdentifier: "toChooseView", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

@@ -12,4 +12,4 @@ let segueSignUpToSetUp: String! = "signuptosetup"
 let segueSetUpToHome: String! = "fromSignUpToHome"
 let segueLoginToHome: String! = "loginToHomeView"
 
-
+var mainPlayer: Player = Player(username: "cornrowKenny", password: "helloworld", name: "Kendrick Duckworth", age: 26, height: "5'7", experience: 7)

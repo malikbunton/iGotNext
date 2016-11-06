@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D019D371DCF478B00E8847B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D019D361DCF478B00E8847B /* ProfileViewController.swift */; };
 		0D77E8EB1DCEFA2200164B3B /* ChooseGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D77E8EA1DCEFA2200164B3B /* ChooseGameView.swift */; };
 		0D77E8ED1DCF0B9B00164B3B /* PlayerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D77E8EC1DCF0B9B00164B3B /* PlayerData.swift */; };
 		0DC1C6151DCEAF250093ECE8 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1C6141DCEAF250093ECE8 /* LaunchView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D019D361DCF478B00E8847B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D77E8EA1DCEFA2200164B3B /* ChooseGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGameView.swift; sourceTree = "<group>"; };
 		0D77E8EC1DCF0B9B00164B3B /* PlayerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerData.swift; sourceTree = "<group>"; };
 		0DC1C6141DCEAF250093ECE8 /* LaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				0DD7DBC61DCE624D0030FD31 /* Info.plist */,
 				0DD7DBBE1DCE624D0030FD31 /* GotNext.xcdatamodeld */,
 				0D77E8EC1DCF0B9B00164B3B /* PlayerData.swift */,
+				0D019D361DCF478B00E8847B /* ProfileViewController.swift */,
 			);
 			path = GotNext;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				0DD7DBD11DCE66DA0030FD31 /* HomeViewController.swift in Sources */,
 				0D77E8EB1DCEFA2200164B3B /* ChooseGameView.swift in Sources */,
 				0DC1C6151DCEAF250093ECE8 /* LaunchView.swift in Sources */,
+				0D019D371DCF478B00E8847B /* ProfileViewController.swift in Sources */,
 				0DD7DBD51DCE68A10030FD31 /* Game.swift in Sources */,
 				0DC1C61F1DCEBD9D0093ECE8 /* Constants.swift in Sources */,
 			);

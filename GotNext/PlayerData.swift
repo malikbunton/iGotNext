@@ -17,7 +17,7 @@ var playerData: [Player] = [
     Player(username: "Jesus ShuttlesWorth", password: "moneymakingmitch", name: "Ray Allen", age: 38, height: "6'7", experience: 20),
     Player(username: "lilBbasedGodCurse", password: "kd", name: "Lil B", age: 29, height: "5'10", experience: 1000),
     Player(username: "DrizzyDrake", password: "thankmelater", name: "Drake", age: 30, height: "6'0", experience: 6),
-    Player(username: "micheleObamaGetsBuckets", password: "jujuonthebeat", name: "Michele", age: 46, height: "5'10", experience: 12),
+    Player(username: "micheleObamaGetsBuckets", password: "jujuonthebeat", name: "Michelle", age: 46, height: "5'10", experience: 12),
     Player(username: "queenB", password: "Jay", name: "Beyonce", age: 34, height: "5'5", experience: 7),
     Player(username: "serenaRackets", password: "lupita", name: "Serena", age: 33, height: "5'8", experience: 7),
     Player(username: "malik", password: "1234", name: "ChefCurryWitDaShot", age: 18, height: "6'2", experience: 11),
