@@ -130,8 +130,20 @@
                     <view key="view" contentMode="scaleToFill" id="jPJ-WP-XTL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqH-Hn-sy7"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="top" secondItem="jPJ-WP-XTL" secondAttribute="top" id="T5a-LC-yeg"/>
+                            <constraint firstAttribute="trailing" secondItem="hqH-Hn-sy7" secondAttribute="trailing" id="oER-zG-FBb"/>
+                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="bottom" secondItem="wZa-zz-dQN" secondAttribute="top" id="qoS-fP-S5b"/>
+                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="leading" secondItem="jPJ-WP-XTL" secondAttribute="leading" id="rCJ-v3-Cq4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="hqH-Hn-sy7" id="9bb-tT-mHN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJJ-zZ-evz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
