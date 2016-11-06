@@ -8,12 +8,19 @@
 
 import UIKit
 
-class SignUpView: UIViewController {
+class SignUpView: UIViewController, UITextFieldDelegate{
 
+    @IBOutlet var usernameField: UITextField!
+    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var confirmPasswordField: UITextField!
+    @IBOutlet var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func signUp(_ sender: AnyObject) {
+        
     }
 
     override func didReceiveMemoryWarning() {
