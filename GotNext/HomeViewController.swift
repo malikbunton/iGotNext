@@ -132,23 +132,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let pin = annotation as? GameAnnotation {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        if let pin = view.annotation as? GameAnnotation {
             if let selectedGame = pin.game {
                 var chooseGameView = ChooseGameView()
                 chooseGameView.game = selectedGame
-                chooseGameView.addressLabel.text = selectedGame.name
-                chooseGameView.openTimeLabel.text = selectedGame.openTime
-                chooseGameView.closeTimeLabel.text = selectedGame.closeTime
-                chooseGameView.numPlayersLabel.text = String(selectedGame.players.count)
                 self.present(chooseGameView, animated: true, completion: nil)
             }
+
         }
-        
-        return MKAnnotationView()
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

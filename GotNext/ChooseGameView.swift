@@ -31,6 +31,12 @@ class ChooseGameView: UIViewController, UITableViewDelegate{
         super.viewDidLoad()
         
         playerTable.delegate = self
+        if let userGame = self.game {
+            self.addressLabel.text = userGame.name
+            self.openTimeLabel.text = userGame.openTime
+            self.closeTimeLabel.text = userGame.closeTime
+            self.numPlayersLabel.text = String(userGame.players.count)
+        }
 
         // Do any additional setup after loading the view.
     }
