@@ -10,7 +10,31 @@ import CoreLocation
 import MapKit
 import UIKit
 
-
+class GamAnnotation : NSObject, MKAnnotation {
+    private var coord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    var game: Game!
+    var coordinate: CLLocationCoordinate2D {
+        get {
+            return coord
+        }
+    }
+    
+    func getGame() -> Game? {
+        if (self.game != nil) {
+            return game
+        }
+        else {
+            return nil
+        }
+    }
+    
+    var title: String? = ""
+    var subtitle: String? = ""
+    
+    func setCoordinate(newCoordinate: CLLocationCoordinate2D) {
+        self.coord = newCoordinate
+    }
+}
 
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
@@ -94,10 +118,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         ]
         
         for location in locations {
+            let annotation = GamAnnotation()
+            annotation.coordinate
+            /*
             let annotation = MKPointAnnotation()
             annotation.title = location["title"] as? String
             annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
-            mapView.addAnnotation(annotation)
+            mapView.addAnnotation(annotation)  */
         }
         /*
         for items in matchingItems {

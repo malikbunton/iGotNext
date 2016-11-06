@@ -144,10 +144,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="top" secondItem="jPJ-WP-XTL" secondAttribute="top" id="T5a-LC-yeg"/>
-                            <constraint firstAttribute="trailing" secondItem="hqH-Hn-sy7" secondAttribute="trailing" id="oER-zG-FBb"/>
-                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="bottom" secondItem="wZa-zz-dQN" secondAttribute="top" id="qoS-fP-S5b"/>
-                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="leading" secondItem="jPJ-WP-XTL" secondAttribute="leading" id="rCJ-v3-Cq4"/>
+                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="centerY" secondItem="jPJ-WP-XTL" secondAttribute="centerY" id="AXN-G1-vAX"/>
+                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="centerX" secondItem="jPJ-WP-XTL" secondAttribute="centerX" id="Sob-Iv-E0h"/>
+                            <constraint firstAttribute="trailing" secondItem="hqH-Hn-sy7" secondAttribute="trailing" id="atT-ye-jia"/>
+                            <constraint firstItem="wZa-zz-dQN" firstAttribute="top" secondItem="hqH-Hn-sy7" secondAttribute="bottom" id="pmc-3m-wpJ"/>
+                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="top" secondItem="jPJ-WP-XTL" secondAttribute="top" id="rBz-CZ-ocq"/>
+                            <constraint firstItem="hqH-Hn-sy7" firstAttribute="leading" secondItem="jPJ-WP-XTL" secondAttribute="leading" id="y5g-Th-ANi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -156,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJJ-zZ-evz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3188" y="1191"/>
+            <point key="canvasLocation" x="3188" y="1190.5547226386807"/>
         </scene>
         <!--Choose Game View-->
         <scene sceneID="cfZ-wO-z5g">
