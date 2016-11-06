@@ -11,11 +11,43 @@ import MapKit
 import UIKit
 
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark)
+}
+
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     // This manages the users' position.
     var locationManager: CLLocationManager!
+    // Matching items for the basketball courts and shit nam saying.
+    var matchingItems:[MKMapItem] = []
+    //
+    var selectedPin:MKPlacemark? = nil
+    
+    // This generates the queries for parks and basketball courts in the area.
+    func generateParks() {
+        guard let mapView = mapView else { return }
+        /*
+        var queryItems: [String] = ["parks", "basketball courts"]
+        for queryItem in queryItems {
+            
+        }
+         */
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = "parks"
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        
+        search.start { response, _ in
+            guard let response = response else {
+                return
+            }
+            self.matchingItems = response.mapItems
+        }
+    }
     
     func goToLocation(location: CLLocation) {
         let span = MKCoordinateSpanMake(0.1, 0.1)
@@ -42,35 +74,68 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         // set the region to display, this also sets a correct zoom level
         // set starting center location in San Francisco
-        let centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
+        let centerLocation = CLLocation(latitude: 33.7683, longitude: -84.4008)
         goToLocation(location: centerLocation)
+        
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.distanceFilter = 200
         locationManager.requestWhenInUseAuthorization()
-    }
-    
-    
-    
-    /*
-    override func loadView() {
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        view = mapView
         
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        generateParks()
+        //let hubbleSpaceCenter:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
+        let locations = [
+            ["title": "Atlanta Hawks Stadium",    "latitude": 33.756885, "longitude": -84.39211],
+            ["title": "Archer Hall", "latitude": 33.7462, "longitude": -84.4138],
+            ["title": "Kipps Academy", "latitude": 33.7673, "longitude": -84.4232]
+        ]
+        
+        for location in locations {
+            let annotation = MKPointAnnotation()
+            annotation.title = location["title"] as? String
+            annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
+            mapView.addAnnotation(annotation)
+        }
+        /*
+        for items in matchingItems {
+            selectedPin = items.placemark
+            var mapAnnotation = MKPointAnnotation()
+            var placeMark = MKPlacemark(coordinate: hubbleSpaceCenter)
+            mapAnnotation.coordinate = items.placemark.coordinate
+            mapAnnotation.title = items.placemark.name
+            mapView.addAnnotation(mapAnnotation)
+        }
+    
+        
+        var mapAnnotation = MKPointAnnotation()
+        var placeMark = MKPlacemark(coordinate: hubbleSpaceCenter)
+        mapAnnotation.coordinate = placeMark.coordinate
+        mapAnnotation.title = placeMark.name
+        
+        mapView.addAnnotation(mapAnnotation)
+ */
+        // cache the pin
+        //selectedPin = placemark
+        // clear existing pins
+        /*
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        if let city = placemark.locality,
+            let state = placemark.administrativeArea {
+            annotation.subtitle = "(city) (state)"
+        }
+        mapView.addAnnotation(annotation)
+        //let span = MKCoordinateSpanMake(0.05, 0.05)
+        //let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        //mapView.setRegion(region, animated: true)
+        
+        */
     }
-    */
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -87,5 +152,28 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
+
+extension HomeViewController: HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark){
+        // cache the pin
+        selectedPin = placemark
+        // clear existing pins
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        if let city = placemark.locality,
+            let state = placemark.administrativeArea {
+            annotation.subtitle = "(city) (state)"
+        }
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated: true)
+    }
+}
+
+
